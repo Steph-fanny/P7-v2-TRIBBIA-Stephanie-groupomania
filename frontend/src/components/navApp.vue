@@ -5,8 +5,8 @@
     <div class= "container-fluid">   
       <!-- Collapsible wrapper -->
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <!-- Navbar brand -->
-        <a class="navbar-brand mt-2 mt-lg-0" href="#">
+       <!-- Navbar brand -->
+        <a class="navbar-brand mt-2 mt-lg-0" href="#">          
         <!--image pas defaut -->  
           <img
             src="../assets/icon-left-font.png"
@@ -15,6 +15,15 @@
             loading="lazy"
           />
         </a>
+
+
+
+
+
+ <nav class="navbar navbar-expand-sm ">
+         <!-- Links -->
+         <ul class="navbar-nav">
+
         <!-- Left links -->      
           <li class="nav-item navbar-nav me-auto mb-2 mb-lg-0">
             <router-link
@@ -40,7 +49,8 @@
           Voir tous les utilisateurs
           </router-link>
         </li> 
-  
+    </ul>
+      </nav>
           <!-- <li class="nav-item navbar-nav me-auto mb-2 mb-lg-0">
               <router-link to= "/forum" 
               class="nav-link"             
@@ -136,6 +146,7 @@ export default {
 </script>
 
 <style>
+
 .nav-link {
     color :white !important;
 }

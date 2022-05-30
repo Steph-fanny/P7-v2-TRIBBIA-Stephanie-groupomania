@@ -31,8 +31,9 @@
 
 
 ### BackEnd
-*Accédez sur https://nodejs.org/en/ pour télécharger puis installer Node.js sur votre machine
-*cd Backend:
+* Accédez sur https://nodejs.org/en/ pour télécharger puis installer Node.js sur votre machine
+
+* cd Backend:
 Chargez le package nodemon : ``npm install -g nodemon``
 
 Installer Express.js: ``npm install --save express``

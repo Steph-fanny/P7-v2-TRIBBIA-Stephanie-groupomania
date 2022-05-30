@@ -27,7 +27,7 @@
                         type="submit"
                         id="btn-post"
                         class="btn btn-primary "                        
-                        @click="addPost"
+                      
                         >Publier</button>    
                    
 

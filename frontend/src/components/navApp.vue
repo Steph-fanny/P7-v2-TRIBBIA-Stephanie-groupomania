@@ -1,6 +1,6 @@
 <template>
    
-  <nav class="navbar navbar-expand-lg " style="background-color: #0d0764!important;">
+  <nav class="navbar navbar-expand-lg " style="background-color: #4E5166!important;">
     <!-- Container wrapper -->
     <div class= "container-fluid">   
       <!-- Collapsible wrapper -->

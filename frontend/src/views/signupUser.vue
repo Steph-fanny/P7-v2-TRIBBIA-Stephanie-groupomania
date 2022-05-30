@@ -162,11 +162,11 @@ data(){
 }
 
 .signup-subtitle{
-  color :#0d0764
+  color :#4E5166
 }
 
 .btn-block{
-  background-color: #0d0764 !important; 
+  background-color: #4E5166!important; 
 }
 .signup-title{
 color: #FD2D01!important ;
@@ -176,6 +176,8 @@ font-weight: 600;
 
 .btnSignup btn btn-success btn-block text-body{
   color: white !important;
+  border-color:  #FFD7D7!important
+;
   }
 
 

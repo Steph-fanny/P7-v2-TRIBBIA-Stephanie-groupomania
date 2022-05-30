@@ -12,7 +12,7 @@
         <div class="card mb-3" style="border-radius: .5rem;">
           <div class="row g-0">
             <div class="col-md-4 gradient-custom text-center text-white" 
-              style="border-top-left-radius: .5rem; border-bottom-left-radius: .5rem; background-color:#0d0764">
+              style="border-top-left-radius: .5rem; border-bottom-left-radius: .5rem; background-color:#4E5166">
                 
                 <!--formulaire -->
                 <form 
@@ -276,9 +276,11 @@ export default {
 
 <style lang='css'>
 .title{
+  margin-top: 15px;
   color:#FD2D01 !important;
   font-size : 26px;
   text-align:center;
+  background-color: #FFD7D7;
 }
 
 .info-profil{

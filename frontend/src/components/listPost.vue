@@ -381,7 +381,7 @@ body{
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    background-color: #0d0764 !important;
+    background-color: #4E5166 !important;
     color: white;
 
 }
@@ -522,7 +522,8 @@ width: 100%;
     -webkit-border-radius: 50px;
     -moz-border-radius: 50px;
     border-radius: 50px;
-    background: #fcd9ba;
+    background:  #FFD7D7
+;
     display: inline-block;
     padding: 10px 20px;
     position: relative;

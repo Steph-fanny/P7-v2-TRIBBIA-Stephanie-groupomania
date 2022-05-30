@@ -38,7 +38,7 @@
 .homeTittle{
    text-align: center;
    font-size : 45px;
-   color : #0d0764;
+   color : #4E5166;
    margin-top : 35px;
 }
 

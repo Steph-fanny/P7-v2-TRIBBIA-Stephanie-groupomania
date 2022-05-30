@@ -273,7 +273,7 @@ body{
     z-index: 99;
 }
 .candidate-list:hover a.candidate-list-favourite {
-    color: #e74c3c;
+    color:  #FD2D01;
     -webkit-box-shadow: -1px 4px 10px 1px rgba(24, 111, 201, 0.1);
     box-shadow: -1px 4px 10px 1px rgba(24, 111, 201, 0.1);
 }
@@ -338,7 +338,8 @@ body{
 } */
 .candidate-list .candidate-list-favourite-time .candidate-list-favourite:hover {
     background: #ffffff;
-    color: #e74c3c;
+    color: #FD2D01
+;
 }
 
 .candidate-banner .candidate-list:hover {

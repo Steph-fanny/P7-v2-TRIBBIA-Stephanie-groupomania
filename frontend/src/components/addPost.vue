@@ -27,7 +27,7 @@
                         type="submit"
                         id="btn-post"
                         class="btn btn-primary "                        
-                      
+                       
                         >Publier</button>    
                    
 
@@ -132,7 +132,7 @@ label:hover{
 }
 
 .publication-link{
-    background-color: #0d0764 !important;
+    background-color: #4E5166 !important;
 
 }
 #image{
@@ -149,7 +149,7 @@ label:hover{
     justify-content: center;
 }
 .btn {
-    background-color: #0d0764 !important;
+    background-color: #4E5166 !important;
     margin-right:5px; 
     margin-bottom: 0px;
 }

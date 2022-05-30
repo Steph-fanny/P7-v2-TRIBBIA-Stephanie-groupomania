@@ -154,7 +154,7 @@ name: 'loginUser',
   margin: 2rem;
   text-align: center;
   font-size: 2rem;
-  color :#122441; 
+  color :#4E5166; 
 }
  .login-form{
    color: #FD2D01;
@@ -162,7 +162,7 @@ name: 'loginUser',
  }
  
 .btn {
-  background-color:#0d0764 ;
+  background-color:#4E5166;
   text-align: center;
   margin-top: 40px;
 }

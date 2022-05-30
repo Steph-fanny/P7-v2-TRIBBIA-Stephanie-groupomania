@@ -88,7 +88,7 @@
                         
         <!-- affichage la liste des  commentaires-->
           <div v-if="post.Comments == 0">        
-          <p> Aucun commentaire pour le moment!</p>
+          <p class ="noComment"> Aucun commentaire pour le moment!</p>
           </div> 
 
         <div v-if="showComments">
@@ -377,6 +377,9 @@ body{
     background-color: #eeeeee;
 }
 
+.noComment{
+margin-left:15px ;
+}
 .container-info{
     display: flex;
     flex-direction: row;

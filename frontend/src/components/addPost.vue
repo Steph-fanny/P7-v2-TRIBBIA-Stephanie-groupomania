@@ -152,6 +152,7 @@ label:hover{
     background-color: #4E5166 !important;
     margin-right:5px; 
     margin-bottom: 0px;
+    border-color: #fd2d01 !important;
 }
 
  @media (min-width: 992px) {

@@ -17,25 +17,23 @@ const multer =require ("../middleware/multer");
 
 
 
-
-
 /******** création des routes d'auth */
 /*création et enregistrement d'un nouvel utilisateur*/
-   //avant création verification MDP : middleware passwordValidation
+   /*avant création verification MDP : middleware passwordValidation*/
 router.post("/signup", passwordValidation, userAuth.signup);
-/*connexion d'un utilisateur*/
+   /*connexion d'un utilisateur*/
 router.post("/login", userAuth.login);
-/* se deconnecter*/
+   /* se deconnecter*/
 router.get("/logout",userAuth.logout);
 
 /****creation du CRUD user:  
-/*voir tous les utilisateurs */
+   /*voir tous les utilisateurs */
 router.get("/accounts", authJwt, userAuth.getAllUsers),
-//*rechercher un utilisateur/ voir un profil */
+   /*rechercher un utilisateur/ voir un profil */
 router.get("/:id", authJwt, userAuth.getOneUser),
-//*modifier un utilisateur*/
+   /*modifier un utilisateur*/
 router.put("/:id",authJwt, multer, userAuth.updateUserProfil);
-/*supprimer un utilisateur*/
+   /*supprimer un utilisateur*/
 router.delete("/:id",authJwt, userAuth.deleteUser);
 
 

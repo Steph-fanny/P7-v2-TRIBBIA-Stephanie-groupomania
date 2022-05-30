@@ -85,9 +85,7 @@ name: 'loginUser',
   },
 
 
-// computed: {
-//     ...mapGetters(["isLoggedIn"])
-//   },
+
 
   data() {
     return {
@@ -99,7 +97,7 @@ name: 'loginUser',
   },
 
   methods:{
-    // ...mapMutations(["setUser","setToken"]),
+   
   loginAccount(){
       let loginDatas ={
         "email": this.input.email,
@@ -121,7 +119,7 @@ name: 'loginUser',
       .then(res => res.json())
         .then((res) => {
           console.log(res)
-          // if(res.ok){
+         
           if (res.userId && res.token) {
             localStorage.setItem("userId", res.userId)
             localStorage.setItem("token", res.token)  
@@ -139,11 +137,6 @@ name: 'loginUser',
 }  
 
       
-//       const response = await fetch (url, option)
-// const { user, token } = await response.json();
-//       this.setUser(user);
-//       this.setToken(token);
-//       this.$router.push("/forum");  
 
 
 </script>  

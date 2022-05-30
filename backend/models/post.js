@@ -7,9 +7,9 @@ module.exports = (sequelize, DataTypes) => {
 }
 
     Post.init({         
-        content:{ type: DataTypes.TEXT, allowNull : false  },
-        imageUrl: { type: DataTypes.STRING },
-        likesCount: {type: DataTypes.INTEGER },
+      content:{ type: DataTypes.TEXT, allowNull : false  },
+      imageUrl: { type: DataTypes.STRING },
+      likesCount: {type: DataTypes.INTEGER },
         
     },  
     {
@@ -18,38 +18,9 @@ module.exports = (sequelize, DataTypes) => {
       timestamps: true,
     });
     
-     return Post;
-         
+     return Post;         
 }   
 
-
-
-
-
-
-//     static associate (models) {
-//       Post.User = Post.belongsTo(User); 
-//       Post.Comment = Post.hasMany(Comment);         
-          
-//     }
-//   }
-
-//     Post.init({
-//         userId: { type : DataTypes.INTEGER },            
-//         content:{ type: DataTypes.TEXT, allowNull : false  },
-//         imageUrl: { type: DataTypes.STRING },
-//         likesCount: {type: DataTypes.INTEGER },
-        
-//     },  
-//     {
-//       sequelize,    
-//       modelName: 'Post',
-//       timestamps: true,
-//     });
-    
-//      return Post;
-         
-// }   
 
   
   

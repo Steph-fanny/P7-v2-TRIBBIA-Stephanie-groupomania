@@ -3,8 +3,6 @@ const dotenv = require("dotenv");
 dotenv.config({path:"./.env"});
 const Sequelize = require('sequelize');
 
-
-
 const sequelize = new Sequelize(
   process.env.DB_DATABASE,
   process.env.DB_USERNAME, 
@@ -13,7 +11,8 @@ const sequelize = new Sequelize(
   host: process.env.DB_HOST,
   port : process.env.DB_PORT,
   dialect: 'mysql'
-});
+  }
+);
 console.log(sequelize)
 
 const db = {};
@@ -27,14 +26,11 @@ db.Comment = require ("./comment")(sequelize, Sequelize),
 db.Comment.belongsTo(db.User);
 db.User.hasMany(db.Comment);
 
-
 db.Comment.belongsTo(db.Post);
 db.Post.hasMany(db.Comment);
 
 db.Post.belongsTo(db.User);
 db.User.hasMany(db.Post);
-
-
 
 sequelize.authenticate()
   .then(() => console.log('Connexion à mysql réussie !'))

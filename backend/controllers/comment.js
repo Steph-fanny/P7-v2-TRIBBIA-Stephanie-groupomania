@@ -78,18 +78,3 @@ exports.deleteComment  = (req, res, next) => {
 
 
 
-// // *** modifier un commentaire : auteur du commentaire ***
-// exports.updateComment = (req, res, next) => {
-    
-//     Comment.findOne({          
-//         where: { id: req.params.id},
-       
-//     }) 
-   
-//         Comment.update({  
-//             where: { id: req.params.id } })         
-                       
-//      .then(() => res.status(200).json({ comment }))
-//     .catch(error => res.status(400).json({ error}))
-        
-// }

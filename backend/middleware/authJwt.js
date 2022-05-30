@@ -13,17 +13,13 @@ l'utilisateur est authentifier avant d'autoriser l'envoi des requetes*/
 comparaison avec celui de la requete
 */
 // package jwt//
-
-const { log } = require('console');
 const jwt = require('jsonwebtoken');
 require("dotenv").config();
 
-
-// /* extraction du token : 
-//   vérifier si chaine de caractere
-//   contient mot bearer */
-const extractBearer = authorization => { 
-    
+/*** extraction du token : 
+    vérifier si chaine de caractere
+    contient mot bearer */
+const extractBearer = authorization => {     
     if(typeof authorization !== 'string'){
         return false
     }
@@ -34,11 +30,10 @@ const extractBearer = authorization => {
     /*matches 2 contient le token*/
 }
 
-
-// /* vérification de la présence du token */
+/*** vérification de la présence du token */
     const authJwt = (req, res, next) => {
 
-//     /*vérification attribut dans l'entete(bearer + chaine de caractére*/
+    /*vérification attribut dans l'entete(bearer + chaine de caractére*/
     const token = req.headers.authorization && extractBearer (req.headers.authorization)
     console.log('HEADERS:', req.headers)
     console.log('TOKEN:',token)
@@ -59,36 +54,4 @@ const extractBearer = authorization => {
     })   
 }
 module.exports = authJwt
-
-
-
-
-
-//  module.exports = (req, res, next) => { // On exporte un middleware //
-//    //tester si l'utilisateur est connecté  
-
-//     try {
-//         console.log(req.headers)       
-//         const token = req.headers.authorization.split(' ')[1]; // [bear + N°]
-//         // const decodedToken = jwt.verify(token, 'RANDOM_TOKEN_SECRET', {expireIn:'24h'});
-//         const decodedToken = jwt.verify(token, 'RANDOM_TOKEN_SECRET');
-//         const userId = decodedToken.userId;
-//         req.decodedToken = decotedToken
-//         if (req.body.userId && req.body.userId !== userId) {          
-//             throw error;
-//         }
-//         else{ 
-//             //verifier que c'est bien l'utilisateur "local"
-//             res.locals.idUser = userId
-//             next();
-//         }   
-
-//         // si erreur si une des const =>renvoie catch
-//     } catch (error) {
-//         res.status(401).json({ error: new Error("requête non authentifiée!")});
-//     }
-//  }
-
-
-    
-        
+       

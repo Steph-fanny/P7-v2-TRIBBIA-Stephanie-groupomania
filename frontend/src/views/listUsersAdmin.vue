@@ -2,20 +2,16 @@
 <div>
 <div><navApp/></div>
 
-<!-- <div>
-    <p>Listes des utilisateurs (il y a {{ comptage }} utilisateurs ) </p>
-</div> -->
-
 <div class="container mt-3 mb-4">
 <div class="col-lg-9 mt-4 mt-lg-0">
     <div class="row">
       <div class="col-md-12">
         <div class="user-dashboard-info-box table-responsive mb-0 bg-white p-4 shadow-sm">
-          <table class="table manage-candidates-top mb-0">
-            <thead>
-              <tr>
+          <table class="table">
+            <thead class ="thead-dark">
+              <tr>               
                 <th>Nom de l'utilisateur</th>                
-                <th class="action text-right">Action</th>
+                <th>Action</th>
               
               </tr>
             </thead>
@@ -47,7 +43,9 @@
                   class="candidate-list-details">         
                     <div class="candidate-list-info">
                       <div class="candidate-list-title">
-                        <h5 class="mb-0">{{user.firstName }} {{ user.lastName}} </h5>
+                        <h5 class="mb-0 edit" @click="goUserProfil(user.id)">
+                          {{index +1}} {{user.firstName }} {{ user.lastName}} 
+                        </h5>
                       </div>
                       <div class="candidate-list-option">
                         <ul class="list-unstyled">
@@ -59,7 +57,7 @@
                   </div>
                  </td>
 
-                  <td>
+                   <td>
                   <ul class="list-unstyled mb-0 d-flex justify-content-end">
                     <button                       
                     class= "form-control btn btn-danger"
@@ -101,9 +99,12 @@ export default {
     return {       
       userId: localStorage.getItem("userId"),
       token: localStorage.getItem("token"),  
-      users:[],    
+      users:[],   
+      
     }
   },
+
+ 
 
 async mounted() {
     this.userId = JSON.parse(localStorage.getItem("userId"));    
@@ -125,30 +126,26 @@ async mounted() {
         res.json().then((data) => { 
           console.log(data)
           console.table(data)
-          this.users = data  
-          
-          
-                 
+          this.users = data      
+                   
         })                 
       })               
   }, 
 
+//  computed: {
+//       comptage(){
+//         return this.users.lenght
+//       }      
+//   },
  
 
-    
-  
-  computed: {
-    // comptage(){
-    //   return this.users.users.length
-    // }
+     methods :{   
+    // evolution pour admin affiche le profil de l'id)   
+      //  goUserProfil(id){
+      //    console.log(id)
+      //    this.$router.push("/account/user")
 
-    
-  },
-  
-
-
-
- methods :{
+      //  },
   
    deleteUser(index){         
      console.log(index)     
@@ -169,38 +166,31 @@ async mounted() {
         return fetch(url, option)
         .then(function (res) {
         res.json()
-        console.log(res.json)   
-        
-
-                       
+        console.log(res.json)  
+                               
             alert("Compte supprimé !");            
             localStorage.clear(); 
         })
-      
-             
-          
+                             
       } else
              alert("vous ne pouvez pas supprimer le compte") 
-
-                   
-          //retour page accueil
-                  
+        //retour page accueil                  
           .catch(error => console.log(error))
       }   
     } 
   
- 
-
-
   }
-
-
-
-
 
 </script>
 
 <style>
+.edit{
+  cursor : pointer;
+}
+.edit:hover{
+ font-weight: bold;
+}
+
 body{
     background-color: #f8f9fa!important
 }
@@ -266,7 +256,7 @@ body{
 .candidate-list {
     background: #ffffff;
     display: -webkit-box;
-    display: -ms-flexbox;
+    display: -ms-flexbox; 
     display: flex;
     border-bottom: 1px solid #eeeeee;
     -webkit-box-align: center;
@@ -313,13 +303,13 @@ body{
     -ms-flex-wrap: wrap;
     flex-wrap: wrap;
     margin-bottom: 0px;
-}
+} 
 .candidate-list-details ul li {
     margin: 5px 10px 5px 0px;
     font-size: 13px;
-}
+} 
 
-.candidate-list .candidate-list-favourite-time {
+/* .candidate-list .candidate-list-favourite-time {
     margin-left: auto;
     text-align: center;
     font-size: 13px;
@@ -330,8 +320,8 @@ body{
 .candidate-list .candidate-list-favourite-time span {
     display: block;
     margin: 0 auto;
-}
-.candidate-list .candidate-list-favourite-time .candidate-list-favourite {
+} */
+/* .candidate-list .candidate-list-favourite-time .candidate-list-favourite {
     display: inline-block;
     position: relative;
     height: 20px;
@@ -345,7 +335,7 @@ body{
     margin-bottom: 20px;
     font-size: 16px;
     color: #646f79;
-}
+} */
 .candidate-list .candidate-list-favourite-time .candidate-list-favourite:hover {
     background: #ffffff;
     color: #e74c3c;

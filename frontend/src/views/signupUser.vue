@@ -12,6 +12,9 @@
               <h2 class=" signup-subtitle text-uppercase text-center mb-5">Créer votre compte</h2>
 
               <form  id="form-signup">
+                <div v-if="error" class="alert alert-danger" role="altert">
+                  {{ error }}
+                </div>
                
                 <div class="form-outline mb-4">
                   <label class="form-label signup-title" for="firstName">Prénom</label>
@@ -47,12 +50,15 @@
                   pattern = " ^(?=.{5,}$)(?=(?:.*?[A-Z]){1})(?=.*?[a-z])(?=(?:.*?[0-9]){2}).*$"/>
                   <p>*Minimum 5 caractéres dont 1 Majuscule, 1 minuscule, 2 chiffres</p>
                 </div>
-                            
+                             
+            
+                    
+                       
                 <div class="d-flex justify-content-center">
                   <button 
                     @click.prevent ="dataSignup"
                     type="button" 
-                    class="btn btn-success btn-block btn-lg gradient-custom-4 text-body">
+                    class="btnSignup btn btn-success btn-block btn-lg gradient-custom-4 ">
                     S'enregistrer
                   </button>
                 </div>
@@ -63,7 +69,6 @@
                 >Connectez vous !</router-link></p>                  
 
               </form>
-
             </div>
           </div>
         </div>
@@ -93,14 +98,16 @@ data(){
         lastName: "",
         email: "",
         password: "", 
-        isAdmin:""       
-      }          
+        isAdmin:""     
+      }, 
+      error:"",            
     };     
   },
 
 
   methods:{
-    dataSignup(){     
+    dataSignup(){    
+   
       let inputDatas ={
         "firstName": this.input.firstName,
         "lastName" : this.input.lastName,
@@ -114,31 +121,37 @@ data(){
         method : "POST",
         body :JSON.stringify(inputDatas),
         headers : {
-          "content-type" : 'application/json', 
-          
-         
+          "content-type" : 'application/json',                  
                 
         }
-      }
-      console.log(option)
-            fetch(urlSignup, option)
-                .then(res => res.json())
-                .then((res) => {                 
-                    console.log(res)                  
-                    localStorage.setItem("userId", res.userId);                                     
-                    localStorage.setItem("token", res.token);
-                    console.log(localStorage)
-                    this.$router.push("/");
-                    alert(" Bienvenue sur Groupomania, connectez vous");                         
-                                                                
-              })
-               
-                    
-               
-                .catch(error => console.log(error))
-        }
+      }     
+      console.log(option) 
+      
+      
+      if (
+        this.input.firstName !== "" || 
+        this.input.lastName !== "" ||
+        this.input.email !== "" || 
+        this.input.password !== ""
+        )   
+         
+        fetch(urlSignup, option)
+          .then(res => res.json())
+            .then((res) => {                 
+              console.log(res)                  
+              localStorage.setItem("userId", res.userId);                                     
+              localStorage.setItem("token", res.token);
+              console.log(localStorage)
+              this.$router.push("/");
+              alert(" Bienvenue sur Groupomania, connectez vous");                                                           
+            })
+            
+          .catch(error => console.log(error)) 
+    }                                                      
+          
     }
-}
+  }
+
   
 </script>
 
@@ -160,6 +173,10 @@ color: #FD2D01!important ;
 text-decoration: none !important;
 font-weight: 600;
 }
+
+.btnSignup btn btn-success btn-block text-body{
+  color: white !important;
+  }
 
 
 </style>

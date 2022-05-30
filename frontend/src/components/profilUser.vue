@@ -182,8 +182,6 @@ export default {
 
     // ********changer la photo de profil*******
     changePicture() {   
-      // this.file = e.target.files[0];  
-      // this.imageUrl= URL.createObjectURL(e.target.file[0])
       this.file = this.$refs.file.files[0];
       this.imageUrl = URL.createObjectURL(this.file);
       },
@@ -210,15 +208,8 @@ export default {
           
           return data;
         });
-      });
-     
-        
-        // this.file = res.data.file
-        // console.log(this.file);       
-        // alert('The file has been uploaded successfully.')
-        // return res;
-        
-      },
+      });                   
+    },
 
 
     
@@ -277,11 +268,6 @@ export default {
       }   
     } 
   }
-
-
-
-
- 
 
 
 

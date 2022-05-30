@@ -36,8 +36,7 @@
                                     ref="comment"  v-bind="$attrs"                    
                                     @click="createComment(comment.id)"                                                                                                           
                                     >Publier
-                                </button>                                                                                           
-                          
+                                </button>                                                                                          
                         </div> 
                     </form>                                         
                 </div>
@@ -46,12 +45,8 @@
     </div>  
 </template>
         
-  
- 
-
 
 <script>
-
 export default {
     name: "addComment",
     data() {
@@ -60,9 +55,7 @@ export default {
             token: localStorage.getItem("token"),
             postId: "",
             content: "",        
-            comment: {},
-                                                            
-             
+            comment: {},                                                           
         };
     },
 
@@ -82,15 +75,15 @@ export default {
         };                   
                
         fetch(url, options)
-         .then((res) => {
+        .then((res) => {
             res.json()
-        .then(data =>{
-            console.log(data)
-            this.comment = data
-            console.log(this.comment)
-        })              
-         .catch(error => console.log(error))
-    })
+            .then(data =>{
+                console.log(data)
+                this.comment = data
+                console.log(this.comment)
+            })              
+            .catch(error => console.log(error))
+        })
     },
 
 
@@ -99,14 +92,9 @@ export default {
         async createComment(){     
             if(this.content ==="" ){
             return alert ("Veuillez inserer un commentaire ")
-            }                    
-                                            
-        // creation objet formData)       
-            // let formData = new FormData()           
-            // formData.append("content",this.content); 
-            // formData.append("userId", parseInt(localStorage.getItem("userId"))); 
-            // formData.append("postId", this.post );             
-                              
+            }                                                 
+                
+                             
             let inputContent = {
                 "content": this.content,                
                 "userId" : localStorage.getItem("userId"),
@@ -130,18 +118,11 @@ export default {
        await fetch(url, options)
         .then((res) => {
             res.json()
-            console.log(res)  
-            
-        // .then((data) => { 
-        //   console.log(data)          
-        //   this.comment = data 
-
+            console.log(res)            
             if (res.ok){   
                 this.content= "" // Retour à 0 des inputs //              
-                alert(" Commentaire bien reçu");                 
-            //    this.$router.push("/listPostPage");
-            
-             
+                alert(" Commentaire bien reçu");               
+                                    
             }else{
                 alert("vous ne pouvez pas publier ce message ")
             }
@@ -152,16 +133,10 @@ export default {
 
     }                       
 } 
-                         
-       
-              
-          
-        
-
+                          
 </script>
 
 <style>
-
 .commentaire{
 width:100%;
 display: block;

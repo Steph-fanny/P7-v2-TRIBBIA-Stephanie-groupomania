@@ -7,8 +7,7 @@
 6.controller pour crud POSTS*/
 
   const express = require('express')
-  const router = express.Router()  
-  // const authAdmin = require("../middleware/authUserAdmin");
+  const router = express.Router()   
   const multer = require("../middleware/multer"); 
   const postCtrl = require("../controllers/post");
   const authJwt = require ("../middleware/authJwt");
@@ -32,5 +31,4 @@
   // /**aimer un post **/
   // router.post = ("/:id/like", auth, postCtrl.likePost);
 
-  
   module.exports = router;

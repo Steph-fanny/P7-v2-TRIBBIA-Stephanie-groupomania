@@ -16,10 +16,6 @@
           />
         </a>
 
-
-
-
-
  <nav class="navbar navbar-expand-sm ">
          <!-- Links -->
          <ul class="navbar-nav">
@@ -51,14 +47,7 @@
         </li> 
     </ul>
       </nav>
-          <!-- <li class="nav-item navbar-nav me-auto mb-2 mb-lg-0">
-              <router-link to= "/forum" 
-              class="nav-link"             
-              title= "acceuil">
-              Accueil
-              </router-link>    
-          </li>        -->
-          
+                    
       <!-- Left links -->
       </div>
       <!-- Collapsible wrapper -->

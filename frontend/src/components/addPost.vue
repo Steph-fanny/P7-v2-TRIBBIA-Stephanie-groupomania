@@ -63,8 +63,7 @@ export default {
             token: localStorage.getItem("token"),                                             
             content:"" ,                         
             file:"",  
-            userId: ""   
-                
+            userId: ""                   
         }
     },
 
@@ -72,8 +71,6 @@ export default {
             this.userId = JSON.parse(localStorage.getItem("userId"));
             console.log(this.userId)
     },
-
-
 
     methods: {                    
         selectFile() {
@@ -93,24 +90,13 @@ export default {
                 formData.append("file", this.file);
                 formData.append("content",this.content); 
                 formData.append("userId", parseInt(localStorage.getItem("userId")));              
-              
-            // let deliverPost = {                     
-            //     "userId" : this.userId,              
-            //     "file" : this.file,         
-            //     "content": this.content,               
-            // }     
-            // console.log(deliverPost)
-     
+                              
             let url = "http://localhost:3000/api/post/new"
             let options = {
-                method: "POST",
-                // body:JSON.stringify(deliverPost),    
+                method: "POST",              
                 body: formData,         
                 headers: {    
-                    'Authorization': 'Bearer ' + localStorage.getItem("token"),                
-                //     // 'Content-Type': 'application/json'
-                    // 'Content-Type': 'multipart/form-data',
-
+                    'Authorization': 'Bearer ' + localStorage.getItem("token"),               
                 }
             }
                
@@ -126,11 +112,9 @@ export default {
                 alert("vous ne pouvez pas publier ce message ")
             }
              this.$router.push("/listPostPage");
-        })
-      
+        })     
         .catch(error => console.log(error)) 
-        }             
-
+        }          
     }                       
 } 
 
@@ -185,7 +169,5 @@ label:hover{
             content: none;
             display: none;
         }
-
-
 
 </style>

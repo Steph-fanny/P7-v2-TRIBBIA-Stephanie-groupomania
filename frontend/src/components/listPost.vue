@@ -124,80 +124,37 @@
                         style="width: 50px;"
                         /> 
                   </div>
-              </div>
-
-              <div class="chat-body">
-                <div class="chat-message">
-                  <h5> {{ user.firstName }} {{user.lastName }} </h5>
-                    <p v-if ="comment.content !== null" class="card-text">{{ comment.content }}</p> 
                 </div>
-        <div class ="btn-deleteComment">                      
-          <button 
-            v-if="comment.UserId == userId || isAdmin === true" 
-            type="button"
-            class="btn btn-danger"
-            title="supprimer"
-            aria-label="bouton supprimer"
-            @click="deleteComment(comment.id)"
-          >
-            supprimer le commentaire
-          </button>   
-        </div>  
-      </div>       
-    </ul>
-  </div>
 
-
-              <!-- <div 
-            class="comment-info"  
-            v-for="user in users"                   
-            v-bind:key="user.id">
-
-              <span class="comment-avatar float-left">
-                <img
-                  v-if = "user.imageUrl == null"
-                  src="../assets/photo-avatar-profil.png"
-                  alt="photo de profil provisoire" id="avatar-profil"
-                  class="rounded-circle"
-                  style="width: 50px;"
-                  /> 
-                    
-                  <img  
-                  v-else            
-                  :src="user.imageUrl"
-                  alt="photo de profil " id="avatar-profil"
-                   class="rounded-circle"
-                  style="width: 50px;"
-                  /> 
-              </span>
-
-                <div class="card-author">                
-                  {{ user.firstName }} {{user.lastName }}
-                </div>
-            </div>     
-  
-          <div class="card-body">
-            <p v-if ="comment.content!== null" class="card-text">{{ comment.content }}</p> -->
-           
-            
-          <!-- </div>  -->
-          </div> 
-       
-     
-          </div>
-
-        <!-- </div> -->
-
+                <div class="chat-body">
+                  <div class="chat-message">
+                    <h5> {{ user.firstName }} {{user.lastName }} </h5>
+                      <p v-if ="comment.content !== null" class="card-text">{{ comment.content }}</p> 
+                          </div>
+                  <div class ="btn-deleteComment">                      
+                    <button 
+                      v-if="comment.UserId == userId || isAdmin === true" 
+                      type="button"
+                      class="btn btn-danger"
+                      title="supprimer"
+                      aria-label="bouton supprimer"
+                      @click="deleteComment(comment.id)"
+                    >
+                      supprimer le commentaire
+                    </button>   
+                  </div>  
+                </div>       
+              </ul>
+          </div>                   
+        </div>      
+      </div>   
     </div>
-        </div>       
-      </div>
+  </div>       
+</div>
   </div>
 
      
-     
-
-
-          
+              
  
 </template>
    
@@ -262,10 +219,7 @@ export default {
         res.json().then((data) => { 
           console.log(data)
           console.table(data)
-          this.users = data 
-            // const currentUser = this.users.users.filter((user)=>{
-            // return user.id == this.post.userID})  
-            // console.log(currentUser) 
+          this.users = data             
         })                 
       })               
   }, 
@@ -287,17 +241,14 @@ export default {
     this.posts = await fetch(url, options).then((res) => {
       // traduction en json)
         res.json()      
-      .then((data) => {
-        console.log(data);        
-        this.posts = data;
-        console.log(this.posts)
-        //  this.posts.createdAt = data.posts.createdAt
-        //  console.log(this.posts.createdAt)
-        //  this.posts.createdAt = this.posts.createdAt.split('T')[0].split('-').reverse().join('/')
+        .then((data) => {
+          console.log(data);        
+          this.posts = data;
+          console.log(this.posts)        
         const currentPosts = this.posts.posts.reverse().slice;
-       console.log(currentPosts)
-      })       
-    });
+        console.log(currentPosts)
+        })       
+      });
 
     // appel à l'api pour affichage des commentaires   
     let urlComment = "http://localhost:3000/api/comment";
@@ -319,9 +270,10 @@ export default {
   },
   
 
+
+
  
-  methods: {
-    
+  methods: {    
         
     async getPosts()  {
       console.log("test");
@@ -350,10 +302,7 @@ export default {
     },
 
   
-
-
-
-    //supprimer le message//
+    //supprimer le post//
     deletePost(index) {
       console.log(index)
       let confirmDeletePost = confirm(
@@ -415,11 +364,6 @@ export default {
         })
         .catch((error) => console.log(error));
     },
-
-
-
-
-
   },
 };
 </script>

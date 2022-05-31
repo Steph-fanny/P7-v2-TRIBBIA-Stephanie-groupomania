@@ -1,6 +1,6 @@
 <template>
   <header class="container-logo">
-        <img src="../assets/logo-haut.png" width="200" height="200" alt="le logo de groupomania" title="logo groupomania" id="logo" />
+        <img src="../assets/logo-haut.png" width="180" height="180" alt="le logo de groupomania" title="logo groupomania" id="logo" />
   </header>
 </template>
 
@@ -16,9 +16,9 @@
     display: flex;  
     align-items: center;
     height: 8 rem;
-    margin-top: 10px;
+    margin-top: 5px;
     margin-bottom: 0px;
-    padding-top: 20px;
+    padding-top: 5px;
   }
 
   .container-logo{

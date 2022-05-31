@@ -365,4 +365,33 @@ body{
 .user-dashboard-info-box .candidates-list .thumb {
     margin-right: 20px;
 }
+
+
+@media (max-width: 768px) {
+    .my-5 {
+      margin:0px;
+    }
+    .btn-danger {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      margin-top: 3px;
+      margin-left:0px;
+      max-width: 100%;     
+      padding:4px;
+      font-size:11px;
+    }
+    .img-fluid{
+      width: 30px!important
+    }
+  .mb-0{
+    font-size:14px;
+  }
+}
+
+
+
+
+
 </style>

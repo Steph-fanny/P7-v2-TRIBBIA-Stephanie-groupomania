@@ -21,6 +21,8 @@
 </script>
 
 <style>
+
+  
   .link {
     font-weight: bold;
     text-align: center;
@@ -29,11 +31,19 @@
     text-align: center;
     margin-top: 100px;
   }
+
+  .link:hover{
+  color: #4E5166;
+  }
   .home-pagelink{
     color: #FD2D01!important;
     font-weight: 800;
     font-size:22px;
   }
+.home-pagelink:hover{
+  color: #4E5166;
+  }
+
 
 .homeTittle{
    text-align: center;

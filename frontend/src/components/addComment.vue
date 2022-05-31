@@ -148,7 +148,7 @@ rounded-circle{
     margin-right: 10px;
 }
 .send{
-     background-color: #4E5166 !important;
+     background-color: #FFD7D7 !important;
     color: white;    
     margin-right: 20px;
     

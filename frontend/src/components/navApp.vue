@@ -1,21 +1,23 @@
 <template>
-   
-  <nav class="navbar navbar-expand-lg " style="background-color: #4E5166!important;">
+
+
+ <nav class="navbar navbar-expand-md " style="background-color: #4E5166!important;">
     <!-- Container wrapper -->
     <div class= "container-fluid">   
       <!-- Collapsible wrapper -->
-      <div class="collapse navbar-collapse" id="navbarSupportedContent">
-       <!-- Navbar brand -->
+      <div class=" navbar-collapse" id="navbarSupportedContent">
+       <!-- Navbar brand  : logo-->
+        <div class="logo-container">
         <a class="navbar-brand mt-2 mt-lg-0" href="#">          
         <!--image pas defaut -->  
           <img
-            src="../assets/icon-left-font.png"
+            src="../assets/logo-haut.png"
             height="115"
             alt="logo groupomania"
             loading="lazy"
           />
         </a>
-
+        </div>
  <nav class="navbar navbar-expand-sm ">
          <!-- Links -->
          <ul class="navbar-nav">
@@ -33,7 +35,7 @@
             <router-link
             to="/listPostPage"
             class="nav-link">
-            Voir tous les posts
+            Forum
             </router-link>
           </li>  
 
@@ -42,7 +44,7 @@
           v-if ="isAdmin === true"  
           to='/listUsers'
           class="nav-link">
-          Voir tous les utilisateurs
+          Tous les utilisateurs
           </router-link>
         </li> 
     </ul>
@@ -53,31 +55,8 @@
       <!-- Collapsible wrapper -->
 
       <!-- Right elements -->
-      <div class="d-flex align-items-center">
-          <li  @click="logout"  class= "dropdown-item ">            
-           <!-- deconnexion -->
-        <div class="dropdown">
-          <router-link to= "/account/user" 
-            class="d-flex align-items-center"         
-            id="navbarDropdownMenuAvatar"
-            role="button"
-            data-mdb-toggle="dropdown"
-            aria-expanded="false"            
-          >
-            <img
-              src="../assets/kisspng-abmeldung-button-icon-shut-cliparts-5a89cae38f35c7.1285697615189798115866.png"
-              height="45"
-              alt="deconnexion"              
-            
-              
-            />
-          </router-link>
-          
-        </div>                            
-                         
-
-          </li>
-              
+     
+      <div class="d-flex align-items-center">        
         <!-- Avatar -->
         <div class="dropdown">
           <router-link to= "/account/user" 
@@ -90,20 +69,44 @@
             <img
               src="../assets/icon-profil.png"
               class="rounded-circle"
-              height="85"
+              height="55"
               alt="Black and White Portrait of a Man"
-              loading="lazy"
-             
+              loading="lazy"           
               
             />
-          </router-link>
-                    
+          </router-link>                    
         </div>
-      </div>
+
+        <li  @click="logout"  class= "dropdown-item ">            
+        <!-- deconnexion -->
+          <div class="dropdown">
+            <router-link to= "/account/user" 
+              class="d-flex align-items-center"         
+              id="navbarDropdownMenuAvatar"
+              role="button"
+              data-mdb-toggle="dropdown"
+              aria-expanded="false"            
+            >
+            <img
+              src="../assets/kisspng-abmeldung-button-icon-shut-cliparts-5a89cae38f35c7.1285697615189798115866.png"
+              height="50"
+              alt="deconnexion"               
+            />
+            </router-link>          
+          </div>                  
+        </li>      
+     
+    </div>
       
     </div>
   </nav>
 </template>
+
+
+
+
+
+
 
 <script>
 
@@ -132,6 +135,10 @@ export default {
   }
 };
 
+
+
+
+
 </script>
 
 <style>
@@ -139,8 +146,65 @@ export default {
 .nav-link {
     color :white !important;
 }
-.dropdown-item{
-  color: white !important;
+.dropdown{
+  margin-left:10px;
 }
+
+  
+
+
+.sidenav {
+  height: 100%;
+  width: 250px;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: -250px;
+  background-color: #e8e8e8;
+  padding-top: 60px;
+  transition: left 0.5s ease;
+}
+
+.sidenav ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+Sidenav menu links
+.sidenav a {
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  font-size: 25px;
+  color: #818181;
+  display: block;
+  transition: 0.3s;
+}
+
+.sidenav a:hover {
+  color: #111;
+} 
+
+@media (max-width: 768px) {    
+.navbar-collapse{
+  flex-basis:0%;
+}
+.logo-container{
+  display:flex;
+  flex-direction: column;
+  align-items: center;
+
+}
+.navbar{
+  display:flex;
+  flex-direction: column;
+  align-items: center;
+}
+.align-items-center{
+  margin:auto;
+ 
+}
+} 
+
 
 </style>

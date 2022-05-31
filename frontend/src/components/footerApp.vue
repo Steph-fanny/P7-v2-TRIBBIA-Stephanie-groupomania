@@ -24,7 +24,9 @@ footer {
   height: auto;
   width: 100%;
   background-color: #4E5166;
-  margin-top: 15rem;
-  
+  margin-top: 0px;
+}
+.text-center{
+  color:white;
 }
 </style>

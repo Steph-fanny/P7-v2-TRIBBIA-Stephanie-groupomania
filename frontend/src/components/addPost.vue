@@ -50,14 +50,18 @@
             </form>                                           
         </div>
     </div>
+   
 </div> 
 
 </template>
 
 <script>
 
+
+
 export default {
-    name:'addPost',    
+  name:'addPost',  
+  
     data() {
         return {   
             token: localStorage.getItem("token"),                                             
@@ -127,14 +131,13 @@ export default {
 label:hover{
  color:#FD2D01 !important;
  font-size: large;
- font-weight:600
- 
+ font-weight:600 
 }
 
 .publication-link{
     background-color: #4E5166 !important;
-
 }
+
 #image{
     display:none;
 }
@@ -149,10 +152,13 @@ label:hover{
     justify-content: center;
 }
 .btn {
-    background-color: #4E5166 !important;
+    color:#4E5166 !important;
+    background-color: #FFD7D7 !important;
     margin-right:5px; 
     margin-bottom: 0px;
-    border-color: #fd2d01 !important;
+    border-color: #4E5166 !important;
+    border-radius: 10px !important;
+
 }
 
  @media (min-width: 992px) {
@@ -170,5 +176,12 @@ label:hover{
             content: none;
             display: none;
         }
+
+@media (max-width: 768px) {    
+.btn-danger{
+    font-size:10px;
+}
+
+}  
 
 </style>

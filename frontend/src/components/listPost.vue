@@ -67,7 +67,7 @@
             <!-- bouton voir pour ajouter un commentaire--> 
             <button class="btn btn-danger" 
               @click="showCreateComment = !showCreateComment ">
-              Commenter
+              Commenter le post
             </button>
             
             <!-- bouton voir tous les commentaires-->
@@ -374,7 +374,7 @@ export default {
 
   <style scoped lang="css">
 body{
-    background-color: #eeeeee;
+    background-color: #ffffff;
 }
 
 .noComment{
@@ -403,7 +403,7 @@ margin-left:15px ;
   height : 200px; */
   text-align: center;
   margin: 5px; 
-  width: 60vw;
+  width: 95%;
   min-width: 220px;
   min-height: 220px;
   max-width: 300px;
@@ -441,10 +441,10 @@ margin-left:15px ;
     margin-top: 2px !important;
 }
 .btn-deletePost{
-  display: flex;
-  align-items: center;
+  display: flex; 
   justify-content: center;
   margin: 0px;
+  
   
 }
 
@@ -525,7 +525,8 @@ width: 100%;
     -webkit-border-radius: 50px;
     -moz-border-radius: 50px;
     border-radius: 50px;
-    background:  #FFD7D7
+    color : white;
+    background:  #4E5166
 ;
     display: inline-block;
     padding: 10px 20px;
@@ -542,25 +543,32 @@ width: 100%;
 }
 
 
-    @media screen and (max-width: 700px) {
-      .btn-deletePost {
-        display: flex;
-        flex-direction: column;
-        align-content: center;
-        justify-content: center;        
-        max-width: 50%;
-      }
+  @media screen and (max-width: 768px) {
+    .btn-deletePost {
+      display: flex;
+      flex-direction: column;
+      align-content: center;
+      justify-content: center;        
+      max-width: 60%;
+    }
     .btn, btn-danger {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        margin: 4px;
-        max-width: 70%;
-        margin-left:auto
-      }
-
-
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      margin-top: 3px;
+      margin-left:0px;
+      max-width: 100%;     
+      padding:4px;
+      font-size:11px;
+    }
+    .rounded-circle{
+      width: 30px!important
+    }
+  .h5{
+    font-size:14px;
+  }
+  
     }
 
 

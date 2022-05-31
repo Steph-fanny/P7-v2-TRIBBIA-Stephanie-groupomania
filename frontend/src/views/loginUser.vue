@@ -1,6 +1,6 @@
 <template>
   <div class= "container-login" id="content">
-<section class="vh-100" style="background-color: #706e6e;">
+<section class="vh-100" style="background-color: #FFD7D7;">
   <div class="container py-5 h-100">
     <div class="row d-flex justify-content-center align-items-center h-100">
       <div class="col col-xl-10">
@@ -165,6 +165,7 @@ name: 'loginUser',
   background-color:#4E5166;
   text-align: center;
   margin-top: 40px;
+  font-weight: 600!important;
 }
 .signup-title{
 color: #FD2D01!important ;
@@ -175,6 +176,7 @@ font-weight: 600;
 .btn:hover {
     border-color: #FD2D01 !important;
     background-color: #FD2D01 !important;
+    color : white !important;;
  }
 
 .inscription{

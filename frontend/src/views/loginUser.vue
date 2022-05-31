@@ -84,9 +84,6 @@ name: 'loginUser',
   footerApp,
   },
 
-
-
-
   data() {
     return {
       input:{

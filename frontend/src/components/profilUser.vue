@@ -277,15 +277,16 @@ export default {
 <style lang='css'>
 .title{
   margin-top: 15px;
-  color:#FD2D01 !important;
+  color:#E42701 !important;
   font-size : 26px;
   text-align:center;
   background-color: #FFD7D7;
 }
 
 .info-profil{
-  color:#FD2D01 !important;
+  color:#E42701 !important;
   font-size : 14px;
+  font-weight: 600;
 }
 .container-profil{
   width: 100%;
